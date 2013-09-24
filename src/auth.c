@@ -14,7 +14,7 @@ int Authentication(const char *UserName, const char *Password, const char *Devic
 #include <assert.h>
 #include <time.h>
 #include <stdbool.h>
-#include <iconv.h>//转换编码所需
+//#include <iconv.h>//转换编码所需
 
 #include <pcap.h>
 
@@ -293,7 +293,7 @@ int Authentication(const char *UserName, const char *Password, const char *Devic
                 DPRINTF("[%d] Server: ", captured[19]);
 
                 //接收客户端提示文字并转为utf8编码 
-                iconv_t cd = iconv_open("utf-8","gbk");
+                /*iconv_t cd = iconv_open("utf-8","gbk");
                 size_t h3clen = msgsize;
                 size_t translen = h3clen *4;
                 char *transMsg = (char*)malloc(translen * sizeof(char));
@@ -306,7 +306,7 @@ int Authentication(const char *UserName, const char *Password, const char *Devic
                 }
                 else
                     fprintf(stdout, "%s\n", H3Cmsg);
-                iconv_close(cd);
+                iconv_close(cd);*/
 			}
 		}
 	}
